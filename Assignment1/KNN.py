@@ -1,5 +1,3 @@
-# Assignment 1
-
 from scipy.spatial import distance
 
 

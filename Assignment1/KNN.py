@@ -37,8 +37,10 @@ class KNN:
 
         Sums up all k neighbours and then takes the mean of the sum
         """
-        y_sum = sum(distances[:self.k][1])
-        return y_sum / self.k
+        sum = 0
+        for i in range(self.k):
+            sum += distances[i][1]
+        return sum / self.k
 
     def predict(self, x_predict):
         distances = self.__calc_distances(x_predict)

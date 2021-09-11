@@ -10,8 +10,6 @@ data = pd.read_csv("../iris.csv", sep=';', names=data_headers)
 
 k = 3
 num_folds = 5
-mean_accuracies_myKNN = []
-mean_accuracies_sklearn = []
 
 # hyperparam tuning with odd values of k
 for k in range(1, 10, 2):
@@ -44,9 +42,6 @@ for k in range(1, 10, 2):
     my_average = sum(my_accuracies) / len(my_accuracies)
     sklearn_average = sum(sklearn_accuracies) / len(sklearn_accuracies)
 
-    mean_accuracies_myKNN.append(round(my_average, 3))
-    mean_accuracies_sklearn.append(round(sklearn_average, 3))
-
-print("Acc for k = 1, 3, 5, 7, 9")
-print("My KNN: {}".format(mean_accuracies_myKNN))
-print("SKLearn: {}".format(mean_accuracies_sklearn))
+    print("Accuracy for {} neighbours".format(k))
+    print("MyKNN: {}".format(round(my_average, 3)))
+    print("SkLearn: {}".format(round(sklearn_average, 3)))

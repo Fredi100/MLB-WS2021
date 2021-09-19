@@ -6,7 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 # Load Data
 data_headers = ['sepal length', 'sepal width', 'petal length', 'petal width', 'class']
-data = pd.read_csv("../iris.csv", sep=';', names=data_headers)
+data = pd.read_csv("iris.csv", sep=';', names=data_headers)
 
 k = 3
 num_folds = 5
